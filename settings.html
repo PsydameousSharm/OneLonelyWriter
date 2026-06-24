@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Settings</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a class="brand" href="index.html">Nova<span>Site</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
+        <a class="active" href="settings.html">Settings</a>
+        <a href="contact.html">Contact</a>
+        <a href="signout.html">Sign Out</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="section">
+    <div class="container panel form-wrap">
+      <div class="kicker">Preferences</div>
+      <h2>Settings</h2>
+      <p>Use this page for appearance, privacy, and account options.</p>
+
+      <form class="form-grid" action="#" method="post">
+        <div class="field-group">
+          <label for="display-name">Display name</label>
+          <input id="display-name" type="text" placeholder="Obama">
+        </div>
+
+        <div class="row">
+          <div class="field-group">
+            <label for="theme">Theme</label>
+            <select id="theme">
+              <option>System</option>
+              <option>Light</option>
+              <option>Dark</option>
+            </select>
+          </div>
+          <div class="field-group">
+            <label for="language">Language</label>
+            <select id="language">
+              <option>English</option>
+              <option>Spanish</option>
+              <option>French</option>
+              <option>Japanese</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="field-group">
+          <label for="bio">Bio</label>
+          <textarea id="bio" placeholder="Write a short bio"></textarea>
+        </div>
+
+        <div class="actions">
+          <button class="button primary" type="submit">Save Settings</button>
+          <a class="button secondary" href="signout.html">Sign Out</a>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">© 2026 One Lonely Writer</div>
+  </footer>
+</body>
+</html>

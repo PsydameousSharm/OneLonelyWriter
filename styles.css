@@ -5,11 +5,10 @@
   --text: #331d47;
   --muted: #a49caf;
   --brand: #7c3aed;
-  --brand-2: #22c55e;
+  --brand-2: #5c6bf7;
   --line: rgba(255,255,255,0.08);
   --shadow: 0 20px 60px rgba(0,0,0,0.25);
   --radius: 20px;
-  --typew: "American Typewriter", Times, serif;
 }
 
 * {
@@ -29,12 +28,6 @@ body {
     var(--bg);
   color: var(--text);
   min-height: 100vh;
-}
-h1{
-  var(--typew);
-}
-h2{
-  var(--typew);
 }
 a {
   color: inherit;
@@ -104,7 +97,7 @@ a {
 }
 
 .panel {
-  background: rgba(17,24,39,0.88);
+  background: var(--panel);
   border: 1px solid var(--line);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -125,6 +118,7 @@ a {
 
 h1, h2, h3 {
   margin: 0 0 12px;
+  font-family: "American Typewriter", Times, serif;
   line-height: 1.1;
 }
 

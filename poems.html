@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Poems</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a class="brand" href="index.html">One <span>Lonely </span>Writer</a>
+      <nav class="nav-links">
+        <a class="active" href="index.html">Home</a>
+        <a href="poems.html">Poems</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <a href="settings.html">Settings</a>
+      </nav>
+    </div>
+  </header>
+<main>
+  <div class="page-shell">
+  <div class="page-header">
+    <h1>Poems</h1>
+    <p>Newest to oldest. Use the search box to filter by title, author, date, warnings, or text.</p>
+    <input id="poemSearch" type="search" placeholder="Search poems...">
+  </div>
+
+  <div id="poemGrid" class="poem-grid">
+    {% assign poems_sorted = site.poems | sort: "date" | reverse %}
+    {% for poem in poems_sorted %}
+      {% assign warnings_text = poem.warnings | join: ", " %}
+      <article
+        class="poem-card"
+        data-search="{{ poem.title | downcase }} {{ poem.author | downcase }} {{ poem.date | date: '%B %-d, %Y' | downcase }} {{ warnings_text | downcase }} {{ poem.content | strip_html | downcase }}"
+      >
+        <h2>{{ poem.title }}</h2>
+        <div class="poem-meta">
+          <span>{{ poem.author }}</span>
+          <span>{{ poem.date | date: "%B %-d, %Y" }}</span>
+        </div>
+
+        {% if poem.excerpt %}
+          <p class="poem-excerpt">{{ poem.excerpt }}</p>
+        {% endif %}
+
+        {% if poem.warnings and poem.warnings.size > 0 %}
+          <div class="warning-list">
+            {% for warning in poem.warnings %}
+              <span class="warning-pill">{{ warning }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <a class="poem-link" href="{{ poem.url }}">Read poem</a>
+      </article>
+    {% endfor %}
+  </div>
+
+  <div id="noResults" class="no-results" hidden>
+    No poems matched your search.
+  </div>
+</div>
+
+<script src="{{ '/poems.js' | relative_url }}"></script>
+</main>
+<footer class="footer">
+  <div class="container">© 2026 One Lonely Writer</div>
+</footer>
+</body>
+</html>

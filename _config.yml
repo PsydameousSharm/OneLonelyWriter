@@ -1,0 +1,11 @@
+collections:
+  poems:
+    output: true
+    permalink: /poems/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: poems
+    values:
+      layout: poem

@@ -1,7 +1,6 @@
 collections:
   poems:
     output: true
-    permalink: /poems/:name/
 
 defaults:
   - scope:

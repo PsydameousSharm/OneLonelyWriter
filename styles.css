@@ -44,7 +44,7 @@ a {
   top: 0;
   z-index: 50;
   backdrop-filter: blur(14px);
-  background: rgba(15,23,42,0.78);
+  background: var(--panel-2);
   border-bottom: 1px solid var(--line);
 }
 
@@ -198,7 +198,7 @@ p {
 .card {
   padding: 22px;
   border-radius: 18px;
-  background: rgba(17,24,39,0.88);
+  background: var(--panel-2);
   border: 1px solid var(--line);
 }
 

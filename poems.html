@@ -8,7 +8,37 @@ permalink: /poems/
   <div class="container">
     <h1>Poems</h1>
     <input id="poemSearch" type="search" placeholder="Search poems...">
-    <div id="poemGrid" class="poem-grid"></div>
+    <div id="poemGrid" class="poem-grid">
+      {% assign poems_sorted = site.poems | sort: "date" | reverse %}
+      {% for poem in poems_sorted %}
+        {% assign warnings_text = poem.warnings | join: " " %}
+        <article
+          class="card poem-card"
+          data-search="{{ poem.title }} {{ poem.author }} {{ poem.date | date: '%B %-d, %Y' }} {{ warnings_text }} {{ poem.content | strip_html }}"
+        >
+          <h2>{{ poem.title }}</h2>
+          <div class="poem-meta">
+            <span>{{ poem.author }}</span>
+            <span>{{ poem.date | date: "%B %-d, %Y" }}</span>
+          </div>
+
+          {% if poem.excerpt %}
+            <p class="poem-excerpt">{{ poem.excerpt }}</p>
+          {% endif %}
+
+          {% if poem.warnings and poem.warnings.size > 0 %}
+            <div class="warning-list">
+              {% for warning in poem.warnings %}
+                <span class="warning-pill">{{ warning }}</span>
+              {% endfor %}
+            </div>
+          {% endif %}
+
+          <a class="poem-link" href="{{ poem.url | relative_url }}">Read poem</a>
+        </article>
+      {% endfor %}
+    </div>
+
     <div id="noResults" class="no-results" hidden>No poems matched your search.</div>
   </div>
 </section>

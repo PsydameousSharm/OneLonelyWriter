@@ -245,12 +245,16 @@ p {
   gap: 16px;
 }
 .flag{
-  height: 26px;
-  width: 36px;
+  width: 40px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 4px;
 }
 .profile{
-  height: 64px;
-  width: 64px;
+  width: 100px;
+  height: auto;
+  vertical-align: middle;
+  margin-right: 4px;
 }
 .field-group {
   display: grid;

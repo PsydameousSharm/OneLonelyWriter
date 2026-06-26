@@ -18,8 +18,9 @@ permalink: /poems/
         >
           <h2>{{ poem.title }}</h2>
           <div class="poem-meta">
-            <span>{{ poem.author }}</span>
             <span>{{ poem.date | date: "%B %-d, %Y" }}</span>
+            <br>
+            <span>By {{ poem.author }}</span>
           </div>
 
           {% if poem.excerpt %}
@@ -29,11 +30,11 @@ permalink: /poems/
           {% if poem.warnings and poem.warnings.size > 0 %}
             <div class="warning-list">
               {% for warning in poem.warnings %}
-                <span class="warning-pill">{{ warning }}</span>
+                <span class="warning-pill">{{ warning }}, </span>
               {% endfor %}
             </div>
           {% endif %}
-
+          <br>
           <a class="button primary" href="{{ poem.url | relative_url }}">Read poem</a>
         </article>
       {% endfor %}

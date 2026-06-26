@@ -6,7 +6,7 @@
   --muted: #a49caf;
   --brand: #7c3aed;
   --brand-2: #5c6bf7;
-  --brand-dark: #540c51;
+  --brand-dark: #1a1039;
   --button-bg: #bdadd9;
   --line: rgba(255,255,255,0.08);
   --shadow: 0 20px 60px rgba(0,0,0,0.25);
@@ -162,6 +162,10 @@ p {
   background: rgba(255,255,255,0.04);
   color: var(--text);
 }
+.button.tertiary {
+  background: var(--brand-dark);
+  color: var(--button-bg);
+}
 
 .button:hover {
   transform: translateY(-1px);
@@ -208,8 +212,12 @@ p {
 }
 .card.poem-card{
   color: var(--brand);
+  background: var(--panel);
 }
-.
+.card.poem-card h2, span, p{
+  color: var(--text);
+}
+
 .stat small {
   font-family: "American Typewriter", Times, serif;
 }

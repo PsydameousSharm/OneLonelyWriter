@@ -251,9 +251,12 @@ p {
   margin-right: 4px;
 }
 .profile{
-  width: 100px;
+  width: 200px;
   height: auto;
   vertical-align: middle;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-right: 4px;
 }
 .field-group {

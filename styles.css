@@ -244,11 +244,11 @@ p {
   display: grid;
   gap: 16px;
 }
-.flag img {
+.flag{
   height: 26px;
   width: 36px;
 }
-.profile img {
+.profile{
   height: 64px;
   width: 64px;
 }

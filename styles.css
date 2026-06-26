@@ -241,7 +241,10 @@ p {
   display: grid;
   gap: 8px;
 }
-
+article{
+  background: var(--brand);
+  color: var(--brand-2);
+}
 label {
   font-weight: 700;
   font-size: 0.95rem;

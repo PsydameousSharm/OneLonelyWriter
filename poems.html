@@ -11,7 +11,7 @@ permalink: /poems/
     <div id="poemGrid" class="poem-grid">
       {% assign poems_sorted = site.poems | sort: "date" | reverse %}
       {% for poem in poems_sorted %}
-        {% assign warnings_text = poem.warnings | join: " " %}
+        {% assign warnings_text = poem.warnings | join: ", " %}
         <article
           class="card poem-card"
           data-search="{{ poem.title }} {{ poem.author }} {{ poem.date | date: '%B %-d, %Y' }} {{ warnings_text }} {{ poem.content | strip_html }}"
@@ -29,13 +29,15 @@ permalink: /poems/
 
           {% if poem.warnings and poem.warnings.size > 0 %}
             <div class="warning-list">
+              <span>CW: </span>
               {% for warning in poem.warnings %}
-                <span class="warning-pill">{{ warning }}, </span>
+                <span class="warning-pill">{{ warning }}</span>
               {% endfor %}
+              <span>e</span>
             </div>
           {% endif %}
           <br>
-          <a class="button primary" href="{{ poem.url | relative_url }}">Read poem</a>
+          <a class="button tertiary" href="{{ poem.url | relative_url }}">Read poem</a>
         </article>
       {% endfor %}
     </div>

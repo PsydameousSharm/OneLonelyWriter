@@ -244,7 +244,14 @@ p {
   display: grid;
   gap: 16px;
 }
-
+.flag img {
+  height: 26px;
+  width: 36px;
+}
+.profile img {
+  height: 64px;
+  width: 64px;
+}
 .field-group {
   display: grid;
   gap: 8px;

@@ -8,15 +8,18 @@ permalink: /poems/
   <div class="container">
     <h1>Poems</h1>
     <input id="poemSearch" type="search" placeholder="Search poems...">
+
     <div id="poemGrid" class="poem-grid">
       {% assign poems_sorted = site.poems | sort: "date" | reverse %}
       {% for poem in poems_sorted %}
-        {% assign warnings_text = poem.warnings | join: " " %}
+        {% assign warnings_text = poem.warnings | join: ", " %}
+        {% assign search_text = poem.poem_text | default: poem.content | strip_html %}
         <article
           class="card poem-card"
-          data-search="{{ poem.title }} {{ poem.author }} {{ poem.date | date: '%B %-d, %Y' }} {{ warnings_text }} {{ poem.content | strip_html }}"
+          data-search="{{ poem.title }} {{ poem.author }} {{ poem.date | date: '%B %-d, %Y' }} {{ warnings_text }} {{ search_text }}"
         >
           <h2>{{ poem.title }}</h2>
+
           <div class="poem-meta">
             <span>{{ poem.date | date: "%B %-d, %Y" }}</span>
             <br>
@@ -29,13 +32,13 @@ permalink: /poems/
 
           {% if poem.warnings and poem.warnings.size > 0 %}
             <div class="warning-list">
-              <span>CW: </span>
+              <span class="warning-label">CW:</span>
               {% for warning in poem.warnings %}
-              <span class="warning-pill">{{ warning }}</span>{% unless forloop.last %}, {% endunless %}
+                <span class="warning-pill">{{ warning }}</span>{% unless forloop.last %}, {% endunless %}
               {% endfor %}
             </div>
           {% endif %}
-          <br>
+
           <a class="button tertiary" href="{{ poem.url | relative_url }}">Read poem</a>
         </article>
       {% endfor %}

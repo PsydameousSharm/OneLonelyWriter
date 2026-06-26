@@ -6,6 +6,7 @@
   --muted: #a49caf;
   --brand: #7c3aed;
   --brand-2: #5c6bf7;
+  --brand-dark: #540c51;
   --button-bg: #bdadd9;
   --line: rgba(255,255,255,0.08);
   --shadow: 0 20px 60px rgba(0,0,0,0.25);
@@ -110,7 +111,7 @@ a {
 }
 
 .kicker {
-  color: var(--brand-2);
+  color: var(--brand-dark);
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.8px;
@@ -203,7 +204,9 @@ p {
   background: rgba(17,24,39,0.88);;
   border: 1px solid var(--line);
 }
-
+.stat small {
+  font-family: "American Typewriter", Times, serif;
+}
 .card h3 {
   font-size: 1.15rem;
 }

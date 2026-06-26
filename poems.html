@@ -31,8 +31,7 @@ permalink: /poems/
             <div class="warning-list">
               <span>CW: </span>
               {% for warning in poem.warnings %}
-                <span class="warning-pill">{{ warning }}</span>
-                {% unless forloop.last %}, {% endunless %}
+              <span class="warning-pill">{{ warning }}</span>{% unless forloop.last %}, {% endunless %}
               {% endfor %}
             </div>
           {% endif %}

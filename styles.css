@@ -87,7 +87,6 @@ a {
   background: rgba(255,255,255,0.08);
   color: #d2bbfa;
 }
-
 .hero {
   padding: 72px 0 28px;
 }
@@ -174,7 +173,9 @@ p {
   display: grid;
   gap: 16px;
 }
-
+.span {
+  font-family: "American Typewriter", Times, serif;
+}
 .stat {
   padding: 18px;
   border-radius: 16px;
@@ -203,7 +204,12 @@ p {
   border-radius: 18px;
   background: rgba(17,24,39,0.88);;
   border: 1px solid var(--line);
+  color: var(--brand);
 }
+.card.poem-card{
+  color: var(--brand);
+}
+.
 .stat small {
   font-family: "American Typewriter", Times, serif;
 }
@@ -216,6 +222,7 @@ p {
 }
 
 .card p {
+  color: var(--brand-dark);
   margin-bottom: 0;
 }
 

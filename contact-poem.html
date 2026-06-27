@@ -3,23 +3,25 @@ layout: default
 title: Poem Contact
 permalink: /contact-poem/
 ---
+
 <div class="container">
   <h1>Poem Submission</h1>
+
   <form action="https://formsubmit.co/psydameouscontact@gmail.com" method="POST">
-  <input type="text" name="penname" placeholder="Pen name" required>
-  <input type="email" name="email" placeholder="Email Address" required>
-  <input type="text" name="title" placeholder="Poem title" required>
+    <input type="text" name="penname" placeholder="Pen name" required>
+    <input type="email" name="email" placeholder="Email Address" required>
+    <input type="text" name="title" placeholder="Poem title" required>
+    <input type="text" name="warnings" placeholder="Warnings separated by commas" required>
 
-  <input type="text" name="warnings" placeholder="Warnings separated by commas" required>
+    <textarea name="excerpt" placeholder="Short summary"></textarea>
+    <textarea name="content" placeholder="Poem text" rows="12" required></textarea>
 
-  <textarea name="excerpt" placeholder="Short summary"></textarea>
-  <textarea name="content" placeholder="Poem text" rows="12" required></textarea>
+    <input type="hidden" name="_subject" value="User uploaded poem">
+    <input type="hidden" name="_autoresponse" value="Your poem has successfully been submitted!">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_next" value="https://psydameoussharm.github.io/OneLonelyWriter/formsubmit/">
+    <input type="hidden" name="_replyto" value="{email}">
 
-  <input type="hidden" name="_subject" value="User uploaded poem">
-  <input type="hidden" name="_autoresponse" value="Your poem has successfully been submitted!">
-  <input type="hidden" name="_template" value="table">
-  <input type="hidden" name="_next" value="https://PsydameousSharm/OneLonelyWriter/formsubmit/">
-
-  <button type="submit">Submit Poem</button>
-</form>
+    <button type="submit">Submit Poem</button>
+  </form>
 </div>

@@ -5,37 +5,14 @@ permalink: /contact/
 ---
 
   <main class="section">
-    <div class="container panel form-wrap">
-      <div class="kicker">Get in touch</div>
-      <h2>Contact form</h2>
-      <p>Fix this later</p>
-
-      <form class="form-grid" action="#" method="post">
-        <div class="row">
-          <div class="field-group">
-            <label for="contact-name">Name</label>
-            <input id="contact-name" type="text" placeholder="Your name">
-          </div>
-          <div class="field-group">
-            <label for="contact-email">Email</label>
-            <input id="contact-email" type="email" placeholder="name@example.com">
-          </div>
-        </div>
-
-        <div class="field-group">
-          <label for="subject">Subject</label>
-          <input id="subject" type="text" placeholder="How can we help?">
-        </div>
-
-        <div class="field-group">
-          <label for="message">Message</label>
-          <textarea id="message" placeholder="Write your message here"></textarea>
-        </div>
-
-        <div class="actions">
-          <button class="button primary" type="submit">Send Message</button>
-          <a class="button secondary" href="index.html">Back Home</a>
-        </div>
-      </form>
-    </div>
+    <article class=""card>
+      <h1>Submit a Poem</h1>
+      <p>Use this form specifically for poem submission.</p>
+      <a class="button primary" href="{{ '/contact-poem/' | relative_url }}">Contact</a>
+    </article>
+    <article class=""card>
+      <h1>General Contact</h1>
+      <p>Use this form for questions, suggestions, and more!</p>
+      <a class="button primary" href="{{ '/contact-gen/' | relative_url }}">Contact</a>
+    </article>
   </main>

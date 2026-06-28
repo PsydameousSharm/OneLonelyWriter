@@ -133,7 +133,9 @@ p {
   line-height: 1.7;
   margin: 0 0 16px;
 }
-
+textarea {
+  resize: none;
+}
 .actions {
   display: flex;
   gap: 12px;
